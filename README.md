@@ -21,17 +21,11 @@ Dentro del repositorio https://github.com/ratarcs/fujitsu en GITHUB, se puede en
 
 pip install requests (Windows) // pip3 install requests (Mac)
 
-Para poder utilizar un TOKEN con seguridad en GITHUB se deberá instalar en la terminal:
-pip install -U python-dotenv
-
-
-PYTHON
-
 import requests;
 
 apiUrl = "https://webexapis.com/v1/rooms"; (Esta dirección puede cambiar según la acción a realizar)
 
-access_token=”*****************************”;
+access_token=”*****************************”; (Aqui se debe utilizar el bearer de admin)
 
 httpHeaders = {"Content-type" : "application/json", "Authorization" : "Bearer " + access_token}
 

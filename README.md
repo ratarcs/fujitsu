@@ -17,24 +17,21 @@ PYTHON
 
 La otra forma de trabajo sería utilizando scripts con el lenguaje PYTHON en un IDE. En mi caso, se ha utilizado Visual Studio Code y se ha tenido que descargar la extensión Python for VSCode para poder trabajar más cómodamente. 
 
-Dentro del repositorio https://github.com/ratarcs/fujitsu en GITHUB, se puede encontrar los scripts de PYTHON separados por el format .PY para poder utilizar según la instrucción que se necesite. A continuación se mostrará un ejemplo de cómo crear ROOMs en WEBEXAPIS :
+Una vez descargado se debe instalar las dependencias de Requests.
 
-pip install requests (Windows) // pip3 install requests (Mac)
+$ pip install requests (Windows)
 
-import requests;
+or
 
-apiUrl = "https://webexapis.com/v1/rooms"; (Esta dirección puede cambiar según la acción a realizar)
+$ pip3 install requests (Mac)
 
-access_token=”*****************************”; (Aqui se debe utilizar el bearer de admin)
+Una vez terminado, se debe ejecutar mediante la instrucción:
 
-httpHeaders = {"Content-type" : "application/json", "Authorization" : "Bearer " + access_token}
+python webexMeeting.py
 
-queryParams = {"sortBy" : "lastactivity", "max" : "2"}
-
-response = requests.get(url=apiUrl, headers=httpHeaders, params=queryParams)
-(A continuación de requests irá seguido de GET, POST, PUT, DELETE para que en la apiUrl se pueda crear, modificar, eliminar ROOMs)
+Se debe escribir el mismo texto que aparece en el listado que aparece en terminal y seguir los pasos que demande la aplicación. Esta devolvera un JSON con todos los datos que deberiamos obtener de la misma manera que se haría, manualmente, en REFERENCES https://developer.webex.com/docs/platform-introduction.
 
 
-print(response.status_code) (Este código devuelve 200 si ha realizado una conexión y 403 si el access_token no es el correcto)
 
-print(response.text) (Respuesta de la API con todos los datos nuevos)
+
+
